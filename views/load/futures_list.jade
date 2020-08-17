@@ -1,0 +1,20 @@
+div
+    table.am-table.am-table-bordered.am-table-radius.am-table-striped
+        thead
+            tr
+                th ID
+                th Title
+                th Data Volume
+                th Start Time
+                th End Time
+                th Operation
+        tbody
+            each item in goods
+                tr
+                    td=item.id
+                    td=item.name
+                    td=item.count
+                    td=item.oldest_date
+                    td=item.newest_date
+                    td
+                        button.train_btn.am-btn.am-btn-sm.am-btn-success(href="/admin/data/train/#{item.id}") Train

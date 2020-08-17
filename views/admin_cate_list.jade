@@ -1,0 +1,29 @@
+extends admin
+block div
+    div.am-panel.am-panel-primary.am-margin
+        div.am-panel-hd
+            h3.am-panel-title Categories List
+        div.am-panel-bd
+            a.am-btn.am-btn-primary(href="/admin/cate/add/0") 
+                i.am-icon.am-icon-plus &nbsp;
+                | Add
+        table.am-table
+            thead
+                tr
+                    th ID
+                    th Title
+                    th API
+                    th Local Crawler Address
+                    th Operation
+            tbody
+                each item in cates
+                    tr
+                        td= item.id
+                        td= item.name
+                        td= item.api_name
+                        td= item.spider_url
+                        td
+                            a(href="/admin/cate/add/#{item.id}").am-btn.am-btn-warning.am-btn-xs Edit
+                            button(href="/admin/cate/del/#{item.id}",type="button").del_cate_btn.am-btn.am-btn-danger.am-btn-xs Del
+
+

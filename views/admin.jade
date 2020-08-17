@@ -1,0 +1,80 @@
+//后台管理系统底模板
+extends layout
+block body
+    script(src="/js/admin.js",type="text/javascript")
+    link(type="text/css",rel="stylesheet",href='/css/admin.css')
+
+    div(tabindex="-1").am-modal.am-modal-loading.am-modal-no-btn#spidering-modal
+        div.am-modal-dialog
+            div.am-modal-hd Crawling
+            div.am-modal-bd
+                span.am-icon-spinner.am-icon-spin
+
+    div(tabindex="-1").am-modal.am-modal-loading.am-modal-no-btn#training-modal
+        div.am-modal-dialog
+            div.am-modal-hd Machine is learning, Please wait util finish
+            div.am-modal-bd
+                span.am-icon-spinner.am-icon-spin
+
+    //头部
+    header.am-topbar.am-topbar-inverse
+        h1.am-topbar-brand
+            a("href=/admin") WallStreet Predict System
+        div.am-collapse.am-topbar-collapse#topbar-collapse
+            ul.am-nav.am-nav-pills.am-topbar-nav.admin-header-list
+                li.am-hide-sm-only(style="float:right")
+                    a(href="javascript:;")#admin-fullscreen
+                        span.am-icon-arrows-alt &nbsp;
+                        span.admin-fulltext Fullscreen
+                li
+                    a(href="/admin/logout") Quit
+
+    //左部菜单栏
+    div.am-cf.admin-main
+        div.admin-sidebar.admin-main.nav-navicon
+            div.sideMenu(style="color:#aeb2b7;margin:10px 0 0 0;") <i class="am-icon-dashboard">&nbsp;</i> Welcome #{admin.username}
+            div.sideMenu
+                //分类：诸如期货，股票，实体商品
+                h3
+                    i.am-icon-flag &nbsp;
+                    a(href="#") Categories
+                ul
+                    li.func
+                        a(href="/admin/cate/list") List
+
+                //分类下级，具体到某个商品，比如黄金，某只股票，某件淘宝日用品
+                h3
+                    i.am-icon-cart-plus &nbsp;
+                    a(href="#") Resources
+                ul
+                    li.func
+                        a(href="/admin/goods/list") List
+
+                //商品详细数据，跨度为时间
+                h3
+                    i.am-icon-database &nbsp;
+                    a(href="#") Data Management
+                ul
+                    li.func
+                        a(href="/admin/data/spider") Crawler
+
+                //用户(管理员)管理
+                h3
+                    i.am-icon-users &nbsp;
+                    a(href="#") User Management
+                if admin.is_root==1
+                    ul
+                        li.func
+                            a(href="/admin/users/list") Users
+
+    //管理页
+    div.admin-content
+        div.admin
+            div.admin-index
+                //内容模块
+                block div
+
+            div.foods
+                ul MIT License Youwei Huang 2020
+                dl
+                    a.am-icon-btn.am-icon-arrow-up(title="Back to Top" href="")

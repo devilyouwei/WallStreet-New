@@ -1,0 +1,31 @@
+extends layout
+block body
+    script(type="text/javascript",src='/js/index.js')
+    link(type="text/css",rel="stylesheet",href='/css/index.css')
+
+    div.index-container
+        h1.am-text-center.logo 
+            font.am-text-primary W
+            font.am-text-danger a
+            font.am-text-warning l
+            font.am-text-warning l
+            font.am-text-primary S
+            font.am-text-success t
+            font.am-text-warning r
+            font.am-text-danger e
+            font.am-text-danger e
+            font.am-text-success t
+
+        form(name="search_goods" action="/search" method="GET").am-form
+            div.am-input-group
+                input.am-form-field(type="text",placeholder="Input a resource name",name="g_name")
+                span.am-input-group-btn
+                    button.am-btn.am-btn-primary(type="submit") Lucky
+
+            div.cate-select.am-margin-top.am-btn-group(data-am-button)
+                each cate in cates
+                    label.am-btn.am-btn-default.am-btn-xs
+                        input(type="radio",name="c_id",value="#{cate.id}")
+                        |#{cate.name}
+    
+    include ./footer.jade

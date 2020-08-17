@@ -1,0 +1,31 @@
+html,body{
+    background:#fff;
+}
+.index-container{
+    margin:0 auto;
+    margin-top:120px;
+    width:70%;
+    max-width:700px;
+}
+.logo{
+    font-size:400%;
+    position:relative;
+}
+.logo .logo-cn{
+    font-size:30%;
+    position:absolute;
+    bottom:10px;
+}
+.search-logo{
+    position:relative;
+}
+.search-logo-cn{
+    font-size:50%;
+    position:absolute;
+    right:10px;
+    bottom:-15px;
+}
+.c-container{
+    width: 538px;
+    word-wrap: break-word;
+}

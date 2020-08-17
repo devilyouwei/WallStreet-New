@@ -1,0 +1,18 @@
+div.c-container.am-margin-bottom-xl
+
+    h3.am-margin-vertical-xs
+        a(href="#{item.jump}" style="text-decoration:underline") #{item.cate}-#{item.name}
+
+    ul.am-avg-sm-4.am-text-sm
+        li Opening Price #{item.latest_data.open_price}
+        li Highest #{item.latest_data.max_price}
+        li Lowest #{item.latest_data.min_price}
+        li Latest #{item.latest_data.latest_price}
+
+    div.am-g.am-g-collapse.am-margin-top-xs
+        div.am-u-sm-6.am-text-left.am-text-danger Volumes #{item.latest_data.volume}
+        div.am-u-sm-6.am-text-right.am-text-primary.am-text-sm #{item.latest_data.date}
+
+    p.am-text-xs.am-text-primary.am-text-truncate
+        | Source #{item.api_name} &nbsp;
+        a(href="#{item.api_url}?symbol=#{item.api_id}" target="_blank") #{item.api_url}
