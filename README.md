@@ -1,8 +1,10 @@
 # WallStreet (New)
 
+_Predict the futrues in China_
+
 The new version of wallstreet, In English.
 
-_Predict the futrues in China_
+The old version refer to [WallStreet](https://github.com/devilyouwei/WallStreet), note: the old version is in Chinese.
 
 ## Deployment
 
@@ -25,6 +27,14 @@ npm install
 node ./server.js
 
 ```
+
+Access: http://localhost:3000
+
+Admin: http://localhost:3000/admin
+
+username: root
+
+password: root
 
 ## 后记和发展方向
 
